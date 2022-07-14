@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(184, 174, 174);
+        }
+        #head{
+            font-size: larger;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            
+            
+        }
+        input[type=number] {
+            background-color: rgb(221, 202, 202);
+            width: 200px;
+            margin: 14px;
+            padding: 14px;
+            margin-left: 0px;
+        }
+        button[type=submit]{
+            background-color: rgb(221, 202, 202);
+            width: 150px;
+            margin: 14px;
+            padding: 14px;
+            margin-left: 0px;
+            border-radius: 30px;
+        }
+        .top{
+            background-color: #ae46c0;
+            width: 600px;
+            border-radius: 40px;
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            text-align: center;
+            font-size: 45px;
+            text-shadow: 4px 4px 4px chartreuse ;
+        }
+        h2{
+            font-style: italic;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1> Percentage & Grade Calculator </h1>
+    <div id="head">
+     <div class="top">
+
+    <form onsubmit="percentage(); return false" >
+
+            <label for ="eng" >Englsih Marks</label><br>
+            <input type="number" id="eng" class="abc" placeholder="Enter Number Here">
+            <br>
+        
+            <label for ="urd" >Urdu Marks</label><br>
+            <input type="number" id="urd" class="abc" placeholder="Enter Number Here">
+            <br>
+    
+        <label for ="math" >Math Marks</label><br>
+        <input type="number" id="math" class="abc" placeholder="Enter Number Here">
+        <br>
+    
+        <label for ="hist" >History Marks</label><br>
+        <input type="number" id="hist" class="abc" placeholder="Enter Number Here">
+    
+        <br>
+    
+             <label for ="sci" >Science Marks</label><br>
+            <input type="number" id="sci" class="abc" placeholder="Enter Number Here">
+        <br>
+        
+        <button type="submit" >Check</button>
+
+        <h2 id="add"></h2>
+        <h2 id="per"></h2>
+        <h2 id="grade"></h2>
+       
+    </form>
+</div>
+
+</div>
+
+
+    <script>
+function percentage(){
+
+    let num1 = +document.querySelector("#eng").value;
+    let num2 = +document.querySelector("#urd").value;
+    let num3 = +document.querySelector("#math").value;
+    let num4 = +document.querySelector("#hist").value;
+    let num5 = +document.querySelector("#sci").value;
+    let sum=  num1+num2+num3+num4+num5 ;
+    document.querySelector("#add").innerHTML = `Your Total Marks are  ${sum}`;
+    
+    let persent=sum * 100 / 500;
+    document.querySelector("#per").innerHTML = `Your Percentage  is ${persent} %`;
+    if (persent >= 80)
+    {
+        document.querySelector("#grade").innerHTML = `Your Grade is A+`;
+    }
+    else if(persent >= 70 )
+    {
+        document.querySelector("#grade").innerHTML = `Your Grade is A`;
+    }
+    else if(persent >= 60 )
+    {
+        document.querySelector("#grade").innerHTML = `Your Grade is B`;
+    }
+    else if(persent >= 50 )
+    {
+    
+        document.querySelector("#grade").innerHTML = `Your Grade is C`;
+    }
+    else if(persent >= 40 )
+    {
+    
+        document.querySelector("#grade").innerHTML = `Your Grade is D`;
+    }
+    else if(persent >= 33 )
+    {
+    
+        document.querySelector("#grade").innerHTML = `Your Grade is E`;
+    }
+    else 
+    {
+    
+        document.querySelector("#grade").innerHTML = `Your are Fail`;
+    }
+}
+
+    </script>
+</body>
+</html>
